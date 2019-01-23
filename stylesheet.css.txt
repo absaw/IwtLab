@@ -1,0 +1,6 @@
+#12{
+	backgroundcolor:powderblue;
+}
+h1{
+	color:blue;
+}
