@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>Blinking Effect with Javascript</title>
+		<style>
+			#box{
+				text-align:center;
+				width:100px;
+				height: 100px;
+				background-color:Blue;
+				border-color: Black;
+				padding: 5px;
+				border: solid;
+				display: inline-block;
+			}
+			.button{
+				border-collapse: 1;
+				width:20px;
+				height: 10px;
+
+			}
+		</style>
+	</head>
+	<body style="text-align: center; background-color: SeaGreen;">
+		<h1>Blinking Effect</h1>
+		<div id="box"></div><br><br><br>
+		<button onclick="fun1()">CLICK ME TO START </button>
+		<script>
+			function fun1()
+			{
+				var i = 0;
+				var col = ["Red","Green"];
+				var interval = setInterval(blink,500);
+				
+				function blink()
+				{
+					var j=i%col.length;
+					document.getElementById('box').style.backgroundColor=col[j];
+					i++;
+					if(i==10)
+					{
+						clearInterval(interval);
+						document.getElementById('box').style.backgroundColor="Tomato";
+					}
+				}
+				
+			}
+		</script>
+	</body>
+
+</html>
