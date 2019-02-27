@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>My Webpage 4-Registration Form</title>
+ <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<form name="regform "  >
+<h1><b><u>Student Registration Form</u></b></h1>
+<hr>
+<div class="bucket" style="text-align: left">
+ 
+ <LABEL for="FirstName" > <b>First Name </b></LABEL>
+ <small>*</small>
+ <INPUT TYPE=TEXT NAME= "FirstName" SIZE=20 PLACEHOLDER="First Name">
+ <br><br>
+
+ <LABEL for="LastName" > <b>Last Name </b></LABEL>
+ <small>*</small>
+ <INPUT TYPE=TEXT NAME="LastName" SIZE=20 PLACEHOLDER="Last Name">
+ <br><br>
+
+ <LABEL for="RollNumber" > <b>Roll Number </b></LABEL>
+ <small>*</small>
+ <INPUT TYPE=TEXT NAME="RollNumber" SIZE=20 PLACEHOLDER="Roll Number">
+ <br><br>
+
+ <LABEL for="EmailId" > <b>Email Id</b></LABEL>
+ <small>*</small>
+ <INPUT TYPE=TEXT NAME="EmailId" SIZE=20 PLACEHOLDER="Email Id">
+ <br><br>
+ 
+ <LABEL for="Pass1" > <b>Enter Password</b></LABEL>
+ <small>*</small>
+ <INPUT TYPE="Password" NAME="Pass1" SIZE=20 PLACEHOLDER="Password">
+ <br><br> 
+ <LABEL for="Pass2" > <b>Confirm Password</b></LABEL>
+ <small>*</small>
+ <INPUT TYPE="Password" NAME="Pass2" SIZE=20 PLACEHOLDER="Confirm Password">
+ <br><br>
+
+ <input type="Submit" value="SUBMIT" name="Submit" class="sub" onclick="validateMain(this.form)">
+ <Input type="reset" value="RESET" name="Reset" class="res">
+</form>
+</div>
+
+<script type="text/javascript">
+	function validateMain(form)
+	{
+		//valName(form);
+		//valEmail(form);
+		valPassword(form);
+
+	}
+	function valName(form)
+	{
+		var fName = form.FirstName.value;
+		//var fLength = form.FirstName.value.length;
+		var letters = /^[A-Za-z]{6,}$/;
+		/*
+		if(fLength<6 && )
+		{
+			form.FirstName.focus();
+			alert(" Name can't be less than 6 characters");
+		}*/
+		if(!fName.match(letters))
+			alert("Name should only contain alphabets or should be at least have 6 characters");
+	}
+	function valPassword(form)
+	{
+		var pass1 = form.Pass1.value;
+		var pass2 = form.Pass2.value;
+		var format = /^{6,}$/;
+		if(!pass1.match(format))
+			alert("Password should have at least 6 characters");
+		
+		if(!pass1.match(pass2))
+			alert("Password is not matching");
+
+	}
+	function valEmail(form)
+	{
+		var fName = form.EmailId.value;
+		//var fLength = form.FirstName.value.length;
+		var letters = /^[A-Za-z]+@[A-Za-z]+\.[A-Za-z]+$/;
+		
+		if(!fName.match(letters))
+			alert("Email Id is not valid");
+	}
+</script>
+
+</body>
+</html> 
